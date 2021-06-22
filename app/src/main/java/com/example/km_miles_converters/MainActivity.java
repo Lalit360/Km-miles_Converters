@@ -27,11 +27,23 @@ public class MainActivity extends AppCompatActivity {
                 Value = Float.valueOf(binding.insertValues.getText().toString());
                 ShowValue = (float) (Value*0.62137);
                 DecimalFormat formatVal = new DecimalFormat("##.#####" );
-                binding.showValues.setText(Value+" Km to Miles = "+formatVal.format(ShowValue));
+                binding.showValues.setText(formatVal.format(ShowValue));
+            }
+        });
+        binding.convertBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float Value, ShowValue;
+                Value = Float.valueOf(binding.showValues.getText().toString());
+                ShowValue = (float) (Value*0.62137);
+                DecimalFormat formatVal = new DecimalFormat("##.#####" );
+                binding.insertValues.setText(formatVal.format(ShowValue));
+
             }
         });
     }
     public void clearBTN(View view) {
         binding.showValues.setText("");
+        binding.insertValues.setText("");
     }
 }
