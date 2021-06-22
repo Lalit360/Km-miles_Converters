@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 float Value, ShowValue;
                 Value = Float.valueOf(binding.showValues.getText().toString());
-                ShowValue = (float) (Value*0.62137);
+                ShowValue = (float) (Value*0.1.60934);
                 DecimalFormat formatVal = new DecimalFormat("##.#####" );
                 binding.insertValues.setText(formatVal.format(ShowValue));
 
